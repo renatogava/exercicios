@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Somar Ímpares</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Somar Ímpares</h1>
+
+            <p>Digite o número inicial: <input type="number" id="txtInicio"></p>
+
+            <p>Digite o número final: <input type="number" id="txtFim"></p>
+
+            <p><button onclick="calcular_click()">Calcular</button></p>
+
+        </div>
+    </div>
+    <script>
+
+        function calcular_click() {
+
+            var inicioTexto = document.getElementById("txtInicio").value;
+
+            var inicio = parseInt(inicioTexto);
+
+            var fimTexto = document.getElementById("txtFim").value;
+
+            var fim = parseInt(fimTexto);
+
+            var soma = 0;
+
+            for (var i = inicio + 1; i < fim; i++) {
+
+                var resto = i % 2;
+
+                var impar;
+
+                if (resto != 0) {
+                    impar = true;
+                }
+                else {
+                    impar = false;
+                }
+
+                if (impar) {
+                    soma = soma + i;
+                }
+            }
+
+            var mensagem = "A soma dos ímpares é " + soma;
+
+            alert(mensagem);
+        }
+
+    </script>
+
+</body>
+</html>

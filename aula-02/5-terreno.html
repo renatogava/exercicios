@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Terreno</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>Terreno</h1>
+
+            <p>Digite a largura do terreno: <input type="number" id="txtLargura"></p>
+
+            <p>Digite o comprimento do terreno: <input type="number" id="txtComprimento"></p>
+
+            <p>Digite o valor do m2 do terreno: R$ <input type="number" id="txtValorM2"></p>
+
+            <p><button onclick="calcular_click()">Calcular</button></p>
+
+        </div>
+    </div>
+
+    <script>
+        function calcular_click() {
+
+            var largura = document.getElementById("txtLargura").value;
+
+            var comprimento = document.getElementById("txtComprimento").value;
+
+            var valorM2 = document.getElementById("txtValorM2").value;
+
+            var larguraNumero = parseFloat(largura);
+
+            var comprimentoNumero = parseFloat(comprimento);
+
+            var valorM2Numero = parseFloat(valorM2);
+
+            var area = larguraNumero * comprimentoNumero;
+
+            var valor = area * valorM2Numero;
+
+            var mensagem1 = "A área do terreno é de " + area + "m2";
+
+            var mensagem2 = "O valor do terreno é de R$ " + valor;
+
+            alert(mensagem1);
+
+            alert(mensagem2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Lista de Exercícios</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="box">
+
+            <h1>Aula Bônus - Git e GitHub</h1>
+
+            <img width="279" height="108" src="../logo.png" />
+
+            <p>Material de apoio da aula. <a href="Programação-do-Zero-Git-GitHub.pdf">Download do Pdf</a></p>
+
+            <h2>Instalando as Ferramentas</h2>
+            <p>1 - Instale o Visual Studio Community 2022:</p>
+            <ul>
+                <li>
+                    <a href="https://visualstudio.microsoft.com/" target="_blank">Baixar o Visual Studio</a>
+                </li>
+            </ul>
+            <p>2 - Instale o Git:</p>
+            <ul>
+                <li>
+                    <a href="https://git-scm.com/downloads" target="_blank">Baixar o Git</a>
+                </li>
+            </ul>
+            <p>3 - Instale o Notepad++</p>
+            <ul>
+                <li>
+                    <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Baixar o NotePad++</a>
+                </li>
+            </ul>
+
+            <h2>Criando sua conta no GitHub</h2>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/" target="_blank">Criar conta no GitHub</a>
+                </li>
+            </ul>
+
+            <h2>Comandos Básicos</h2>
+
+            <h3>Setup Inicial</h3>
+            <ul>
+                <li>git config --list --show-origin</li>
+                <li>git config --global user.name "Seu Nome"</li>
+                <li>git config --global user.email seunome@seuemails.com</li>
+                <li>git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</li>
+                <li>git config --global init.defaultBranch main</li>
+            </ul>
+
+            <h3>Comandos Locais</h3>
+            <ul>
+                <li>git init meu-primeiro-repositorio</li>
+                <li>git status</li>
+                <li>git add nome-do-arquivo</li>
+                <li>git diff</li>
+                <li>git commit -m "comentario"</li>
+                <li>git rm nome-do-arquivo</li>
+                <li>git log</li>
+                <li>git restore</li>
+                <li>git restore --staged</li>
+                <li>git revert id-do-commit</li>
+            </ul>
+            <h3>Comandos Remotos</h3>
+            <ul>
+                <li>git remote add origin url-repositorio</li>
+                <li>git push -u origin main</li>
+                <li>git fetch</li>
+                <li>git pull</li>
+                <li>git clone url-repositorio</li>
+                <li>git branch nome-da-branch</li>
+                <li>git merge nome-da-branch</li>
+                <li>git checkout nome-da-branch</li>
+                <li>git branch -d nome-da-branch</li>
+                <li>git push origin --delete nome-da-branch</li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Olá mundo</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Olá mundo</h1>
+
+            <p>Digite o número de vezes que você quer dizer Olá: <input type="number" id="txtNumero"></p>
+
+            <p><button onclick="calcular_click()">Calcular</button></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        function calcular_click() {
+            var numeroTexto = document.getElementById("txtNumero").value;
+
+            var numero = parseInt(numeroTexto);
+
+            while (numero > 0) {
+
+                var mensagem = "Olá mundo!";
+
+                alert(mensagem);
+
+                numero = numero - 1;
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

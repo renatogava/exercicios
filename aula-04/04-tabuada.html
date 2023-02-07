@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Tabuada</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Tabuada</h1>
+
+            <p>Digite qual tabuada quer exibir: <input type="number" id="txtNumero"></p>
+
+            <p><button onclick="calcular_click()">Calcular</button></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        function calcular_click() {
+            var numeroTexto = document.getElementById("txtNumero").value;
+
+            var numero = parseInt(numeroTexto);
+
+            var mensagem = "";
+
+            for (var i = 1; i <= 10; i++) {
+
+                var multiplicado = i * numero;
+
+                mensagem += i + " x " + numero + " = " + multiplicado + "\n\r";
+            }
+
+            alert(mensagem);
+        }
+
+    </script>
+
+</body>
+</html>

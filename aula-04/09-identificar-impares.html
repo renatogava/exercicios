@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Somar Ímpares</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Identificar Ímpares</h1>
+
+            <p>Digite o número: <input type="number" id="txtNumero"></p>
+
+            <p><button onclick="identificar_click()">Identificar</button></p>
+
+        </div>
+    </div>
+    <script>
+
+        function identificar_click() {
+
+            var numeroTexto = document.getElementById("txtNumero").value;
+
+            var numero = parseInt(numeroTexto);
+
+            var resto = numero % 2;
+
+            if (resto != 0) {
+                alert("O número é ímpar");
+            }
+            else {
+                alert("O número é par");
+            }
+        }
+
+    </script>
+
+</body>
+</html>

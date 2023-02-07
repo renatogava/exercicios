@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Exibir Primos</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Exibir Primos</h1>
+
+            <p>Digite o número: <input type="number" id="txtFim"></p>
+
+            <p><button onclick="calcular_click()">Exibir Primos</button></p>
+
+        </div>
+</div>
+        <script>
+
+            function calcular_click() {
+
+                var fimTexto = document.getElementById("txtFim").value;
+
+                var fim = parseInt(fimTexto);
+
+                var mensagem = "Os números primos são: \r";
+
+                for (var i = 2; i <= fim; i++) {
+
+                    var primo = true;
+
+                    var numero = i;
+
+                    for (var j = 2; j < numero; j++) {
+
+                        var resto = numero % j;
+
+                        if (resto == 0) {
+                            primo = false;
+                        }
+                    }
+
+                    if (primo) {
+                        mensagem += numero + "\r";
+                    }
+                }
+
+                alert(mensagem);
+            }
+
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Menor Número</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Menor Número</h1>
+
+            <p>Digite o primeiro número: <input type="number" id="txtPrimeiro"></p>
+
+            <p>Digite o segundo número: <input type="number" id="txtSegundo"></p>
+
+            <p>Digite o terceiro número: <input type="number" id="txtTerceiro"></p>
+
+            <p><button onclick="menornumero_click()">Menor Número</button></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        function menornumero_click() {
+            var primeiroTexto = document.getElementById("txtPrimeiro").value;
+
+            var primeiroNumero = parseInt(primeiroTexto);
+
+            var segundoTexto = document.getElementById("txtSegundo").value;
+
+            var segundoNumero = parseInt(segundoTexto);
+
+            var terceiroTexto = document.getElementById("txtTerceiro").value;
+
+            var terceiroNumero = parseInt(terceiroTexto);
+
+            var menorNumero;
+
+            if (primeiroNumero < segundoNumero && primeiroNumero < terceiroNumero) {
+                menorNumero = primeiroNumero;
+            }
+            else if (segundoNumero < primeiroNumero && segundoNumero < terceiroNumero) {
+                menorNumero = segundoNumero;
+            }
+            else if (terceiroNumero < primeiroNumero && terceiroNumero < segundoNumero) {
+                menorNumero = terceiroNumero;
+            }
+
+            var mensagem = "O menor número é " + menorNumero;
+            alert(mensagem);
+        }
+
+    </script>
+
+</body>
+</html>

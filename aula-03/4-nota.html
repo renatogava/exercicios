@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Nota</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Nota</h1>
+
+            <p>Digite sua nota do primeiro semestre: <input type="number" id="txtPrimeiraNota"></p>
+
+            <p>Digite sua nota do segundo semestre: <input type="number" id="txtSegundaNota"></p>
+
+            <p><button onclick="calcular_click()">Calcular</button></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        function calcular_click() {
+            var primeiraNotaTexto = document.getElementById("txtPrimeiraNota").value;
+
+            var primeiraNota = parseInt(primeiraNotaTexto);
+
+            var segundaNotaTexto = document.getElementById("txtSegundaNota").value;
+
+            var segundaNota = parseInt(segundaNotaTexto);
+
+            var notaFinal = (primeiraNota + segundaNota) / 2;
+
+            var mensagem = "Nota final é " + notaFinal;
+
+            if (notaFinal < 6) {
+                mensagem += ". REPROVADO";
+            }
+
+            alert(mensagem);
+        }
+
+    </script>
+
+</body>
+</html>

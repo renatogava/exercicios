@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Bom dia Personalizado</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Bom dia, Boa tarde ou Boa noite?</h1>
+
+            <p><button onclick="botao_click()">Dizer Mensagem</button></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+            var horaAtual = new Date().getHours();
+
+            if (horaAtual < 12) {
+                var mensagem = "Bom dia!";
+
+                alert(mensagem);
+            }
+            else if (horaAtual >= 12 && horaAtual < 18) {
+                var mensagem = "Boa tarde!";
+
+                alert(mensagem);
+            }
+            else if (horaAtual >= 18) {
+                var mensagem = "Boa noite!";
+
+                alert(mensagem);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

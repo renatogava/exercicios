@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Média</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>Média</h1>
+
+            <p>Digite o primeiro número: <input type="number" id="txtPrimeiroNumero"></p>
+
+            <p>Digite o segundo número: <input type="number" id="txtSegundoNumero"></p>
+
+            <p><button onclick="calcular_click()">Calcular</button></p>
+        </div>
+    </div>
+
+    <script>
+        function calcular_click() {
+            var primeiroNumeroTexto = document.getElementById("txtPrimeiroNumero").value;
+
+            var segundoNumeroTexto = document.getElementById("txtSegundoNumero").value;
+
+            var primeiroNumero = parseInt(primeiroNumeroTexto);
+
+            var segundoNumero = parseInt(segundoNumeroTexto);
+
+            var media = (primeiroNumero + segundoNumero) / 2;
+
+            var mensagem = "A média é " + media;
+
+            alert(mensagem);
+        }
+    </script>
+</body>
+</html>

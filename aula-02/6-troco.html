@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Troco</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>Troco</h1>
+
+            <p>Digite o preço unitário do produto: R$ <input type="number" id="txtPrecoUnitario"></p>
+
+            <p>Digite a quantidade de unidades compradas: <input type="number" id="txtQuantidade"></p>
+
+            <p>Digite o valor dado pelo cliente: R$ <input type="number" id="txtValorDadoCliente"></p>
+
+            <p><button onclick="calcular_click()">Calcular</button></p>
+        </div>
+    </div>
+
+    <script>
+        function calcular_click() {
+
+            var precoUnitario = document.getElementById("txtPrecoUnitario").value;
+
+            var quantidade = document.getElementById("txtQuantidade").value;
+
+            var valorDadoPeloCliente = document.getElementById("txtValorDadoCliente").value;
+
+            var precoUnitarioNumero = parseFloat(precoUnitario);
+
+            var quantidadeNumero = parseFloat(quantidade);
+
+            var valorDadoPeloClienteNumero = parseFloat(valorDadoPeloCliente);
+
+            var valorTotal = precoUnitarioNumero * quantidadeNumero;
+
+            var troco = valorDadoPeloClienteNumero - valorTotal;
+
+            var trocoEmReais = "R$ " + troco.toFixed(2).replace('.', ',');
+
+            var mensagem = "O troco do cliente é de R$ " + trocoEmReais;
+
+            alert(mensagem);
+        }
+    </script>
+</body>
+</html>

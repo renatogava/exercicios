@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title>Operadora</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Operadora de Telefonia</h1>
+
+            <p>Digite quantos minutos você consumiu: <input type="number" id="txtConsumo"></p>
+
+            <p><button onclick="calcular_click()">Calcular</button></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        function calcular_click() {
+            var consumoTexto = document.getElementById("txtConsumo").value;
+
+            var valorPlano = 50;
+            var minutosLigacao = 100;
+            var custoAdicionalMinuto = 2;
+
+            var consumo = parseInt(consumoTexto);
+
+            var valorPago;
+
+            if (consumo > minutosLigacao) {
+                var minutosDiferenca = consumo - minutosLigacao;
+
+                var valorDiferenca = custoAdicionalMinuto * minutosDiferenca;
+
+                valorPago = valorPlano + valorDiferenca;
+            }
+            else {
+                valorPago = valorPlano;
+            }
+
+            var mensagem = "O valor a ser pago é R$ " + valorPago.toFixed(2).replace('.', ',');
+
+            alert(mensagem);
+        }
+
+    </script>
+
+</body>
+</html>
