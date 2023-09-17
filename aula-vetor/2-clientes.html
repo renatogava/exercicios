@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Arrays - Todos os Clientes</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Arrays - Todos os Clientes</h1>
+
+            <button onclick="botao_click()">Exibir Cliente</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var clientes = ["Roberto", "Adriana", "José", "Lucas", "Felipe", "Eduardo"];
+
+            for (var i = 0; i < clientes.length; i++) {
+                var cliente = clientes[i];
+
+                alert(cliente);
+
+                console.log(cliente);
+            }
+
+            //OU
+
+            var clientesStr = "";
+
+            for (var i = 0; i < clientes.length; i++) {
+                var cliente = clientes[i];
+
+                clientesStr += cliente + ", ";
+            }
+
+            alert(clientesStr);
+
+            console.log(clientesStr);
+
+            //OU
+
+            alert(clientes.toString());
+        }
+
+    </script>
+
+</body>
+</html>
