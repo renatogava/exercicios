@@ -14,19 +14,16 @@
 
             <h1>Pessoas</h1>
 
-            <label for="txtQtdePessoas">Quantas pessoas vc irá informar?</label>
-
+            <label for="txtQtdePessoas">Informe a quanidade de pessoas:</label>
             <input type="number" id="txtQtdePessoas">
 
-            <label for="txtNome">Informe o nome de cada pessoa:</label>
+            <label for="txtNome">Informe o nome da pessoa:</label>
+            <input type="text" id="txtNome" />
 
-            <input type="text" id="txtNome">
+            <label for="txtIdade">Informe a idade da pessoa:</label>
+            <input type="number" id="txtIdade" />
 
-            <label for="txtIdade">Informe a idade de cada pessoa:</label>
-
-            <input type="number" id="txtIdade">
-
-            <button onclick="botao_click()">OK</button>
+            <button onclick="botao_click()">Armazenar</button>
 
         </div>
     </div>
@@ -38,27 +35,29 @@
 
         function botao_click() {
 
-            var qtdePessoas = parseInt(document.getElementById("txtQtdePessoas").value);
+            var txtQtdePessoas = document.getElementById("txtQtdePessoas");
+
+            var txtNome = document.getElementById("txtNome");
+
+            var txtIdade = document.getElementById("txtIdade");
+
+            var qtdePessoas = parseInt(txtQtdePessoas.value);
 
             if (nomes.length < qtdePessoas) {
 
-                var nome = document.getElementById("txtNome").value;
-                var idade = parseInt(document.getElementById("txtIdade").value);
+                var nome = txtNome.value;
+                var idade = parseInt(txtIdade.value);
 
                 nomes.push(nome);
                 idades.push(idade);
+
+                txtIdade.value = "";
+                txtNome.value = "";
+
+                txtNome.focus();
             }
 
-            if (nomes.length < qtdePessoas)
-            {
-                alert("informe a próxima pessoa");
-
-                document.getElementById("txtNome").value = "";
-                document.getElementById("txtIdade").value = "";
-
-                document.getElementById("txtNome").focus();
-            }
-            else {
+            if (nomes.length == qtdePessoas) {
 
                 var maiorIdade;
                 var posicaoMaiorIdade;
@@ -73,19 +72,16 @@
                     }
                 }
 
-                var pessoaMaisVelha = nomes[posicaoMaiorIdade];
+                var nomePessoaMaisVelha = nomes[posicaoMaiorIdade];
 
-                alert("A pessoa mais velha é " + pessoaMaisVelha);
+                alert("A pessoa mais velha é: " + nomePessoaMaisVelha);
+
+                txtIdade.value = "";
+                txtNome.value = "";
+                txtQtdePessoas.value = "";
 
                 nomes = [];
                 idades = [];
-
-                document.getElementById("txtQtdePessoas").value = "";
-
-                document.getElementById("txtNome").value = "";
-                document.getElementById("txtIdade").value = "";
-
-                document.getElementById("txtQtdePessoas").focus();
             }
         }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Maior, menor e Média</title>
+    <title>Maior, Menor e Média</title>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +12,17 @@
     <div class="container">
         <div class="box">
 
-            <h1>Maior, menor e Média</h1>
+            <h1>Maior, Menor e Média</h1>
 
-            <label for="txtQtdeNumeros">Quantos números vc irá informar?</label>
+            <label for="txtQuantidadeNumeros">Digite a quantidade de números:</label>
 
-            <input type="number" id="txtQtdeNumeros">
+            <input type="number" id="txtQuantidadeNumeros">
 
-            <label for="txtNumero">Informe cada número:</label>
+            <label for="txtNumero">Digite o número:</label>
 
-            <input type="number" id="txtNumero">
+            <input type="number" id="txtNumero" />
 
-            <button onclick="botao_click()">OK</button>
+            <button onclick="botao_click()">Armazenar</button>
 
         </div>
     </div>
@@ -33,27 +33,28 @@
 
         function botao_click() {
 
-            var qtdeNumeros = parseInt(document.getElementById("txtQtdeNumeros").value);
+            var txtQuantidadeNumeros = document.getElementById("txtQuantidadeNumeros");
+
+            var qtdeNumeros = parseInt(txtQuantidadeNumeros.value);
+
+            var txtNumero = document.getElementById("txtNumero");
+
 
             if (numeros.length < qtdeNumeros) {
 
-                var numero = parseInt(document.getElementById("txtNumero").value);
+                var numeroDigitado = parseInt(txtNumero.value);
 
-                numeros.push(numero);
+                numeros.push(numeroDigitado);
+
+                txtNumero.value = "";
+
+                txtNumero.focus();
             }
 
-            if (numeros.length < qtdeNumeros)
-            {
-                alert("informe o próximo número");
+            if (numeros.length == qtdeNumeros) {
 
-                document.getElementById("txtNumero").value = "";
-
-                document.getElementById("txtNumero").focus();
-            }
-            else {
-
-                var maior;
-                var menor;
+                var maiorNumero;
+                var menorNumero;
                 var soma = 0;
                 var media;
 
@@ -61,12 +62,12 @@
 
                     var numero = numeros[i];
 
-                    if (maior == undefined || numero > maior) {
-                        maior = numero;
+                    if (maiorNumero == undefined || numero > maiorNumero) {
+                        maiorNumero = numero;
                     }
 
-                    if (menor == undefined || numero < menor) {
-                        menor = numero;
+                    if (menorNumero == undefined || numero < menorNumero) {
+                        menorNumero = numero;
                     }
 
                     soma = soma + numero;
@@ -74,15 +75,11 @@
 
                 media = soma / numeros.length;
 
-                alert("Maior: " + maior + ". Menor: " + menor + ". Média: " + media);
+                alert("O maior número é " + maiorNumero + ". O menor número é " + menorNumero + ". A média é " + media);
 
                 numeros = [];
 
-                document.getElementById("txtQtdeNumeros").value = "";
-
-                document.getElementById("txtNumero").value = "";
-
-                document.getElementById("txtQtdeNumeros").focus();
+                txtQuantidadeNumeros.value = "";
             }
         }
 

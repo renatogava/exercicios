@@ -14,15 +14,15 @@
 
             <h1>Números Negativos</h1>
 
-            <label for="txtQtdeNumeros">Quantos números vc irá informar?</label>
+            <label for="txtQtdeNumeros">Informe a quantidade de números:</label>
 
             <input type="number" id="txtQtdeNumeros">
 
             <label for="txtNumero">Informe cada número:</label>
 
-            <input type="number" id="txtNumero">
+            <input type="number" id="txtNumero" />
 
-            <button onclick="botao_click()">OK</button>
+            <button onclick="botao_click()">Armazenar</button>
 
         </div>
     </div>
@@ -30,48 +30,42 @@
     <script>
 
         var numeros = [];
-        var negativos = [];
+        var numerosNegativos = [];
 
         function botao_click() {
 
-            var qtdeNumeros = parseInt(document.getElementById("txtQtdeNumeros").value);
+            var txtQtdeNumeros = document.getElementById("txtQtdeNumeros");
+            var txtNumero = document.getElementById("txtNumero");
+
+            var qtdeNumeros = parseInt(txtQtdeNumeros.value);
 
             if (numeros.length < qtdeNumeros) {
 
-                var numero = parseInt(document.getElementById("txtNumero").value);
+                var numero = parseInt(txtNumero.value);
 
                 numeros.push(numero);
+
+                txtNumero.value = "";
+                txtNumero.focus();
             }
 
-            if (numeros.length < qtdeNumeros)
-            {
-                alert("informe o próximo número");
-
-                document.getElementById("txtNumero").value = "";
-
-                document.getElementById("txtNumero").focus();
-            }
-            else {
+            if (numeros.length == qtdeNumeros) {
 
                 for (var i = 0; i < numeros.length; i++) {
 
                     var numero = numeros[i];
 
-                    if (numero < 0)
-                        negativos.push(numero);
+                    if (numero < 0) {
+                        numerosNegativos.push(numero);
+                    }
                 }
 
-                alert(negativos.toString());
+                alert("Os números negativos são: " + numerosNegativos.toString());
 
                 numeros = [];
-
-                negativos = [];
-
-                document.getElementById("txtQtdeNumeros").value = "";
-
-                document.getElementById("txtNumero").value = "";
-
-                document.getElementById("txtQtdeNumeros").focus();
+                numerosNegativos = [];
+                txtNumero.value = "";
+                txtQtdeNumeros.value = "";
             }
         }
 
